@@ -17,18 +17,29 @@ const exampleElement = {
     styles: {
       color: 'red',
       display: 'flex',
+      'flex-direction': 'column',
       'align-items': 'center',
       'justify-content': 'center',
     },
-    child: {
-      tag: 'h2',
-      content: 'Hola soy un hijo',
-    },
+    children: [
+      {
+        tag: 'h2',
+        content: 'Hola soy un hijo',
+      },
+      {
+        tag: 'h2',
+        content: 'Hola soy un hijo',
+      },
+      {
+        tag: 'h2',
+        content: 'Hola soy un hijo',
+      },
+    ],
   },
 }
 
 const content = vlueToHtml({ code: exampleElement })
-
+console.log(content)
 startVlueApp({
   selector: selector,
   content: content,
