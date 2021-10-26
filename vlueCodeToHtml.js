@@ -19,6 +19,17 @@ function vlueToHtml({ code }) {
   return element
 }
 
+function setChildren({ children }) {
+  children.map((child) => {
+    let element = document.createElement(child.tag)
+    // some logit to treat element
+    child.content && (element.innerText = child.content)
+    child.className && (element.className = child.className)
+    child.id && (element.id = child.id)
+    child.child && element.appendChild(vlueToHtml({ code: child }))
+  })
+}
+
 function setStyles({ element, styles }) {
   const newElement = element
   for (const [key, value] of Object.entries(styles)) {
