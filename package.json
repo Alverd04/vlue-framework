@@ -4,10 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node index.js"
   },
-  "type": "module",
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.15.8",
+    "jest": "^27.3.1"
+  },
+  "dependencies": {
+    "babel-jest": "^27.3.1",
+    "ts-jest": "^27.0.7"
+  }
 }
