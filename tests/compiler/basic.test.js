@@ -45,3 +45,21 @@ test('should return a text with styles when passing child with styles', () => {
   expect(element.style.color).toEqual(color)
   expect(element.childNodes.length).toEqual(numberOfChilds)
 })
+
+test('should return a text with styles when passing children with styles', () => {
+  // given
+  const example = EXAMPLES.completeExampleElementWithChildren
+  const numberOfChilds = 3
+  const firstChildText =
+    EXAMPLES.completeExampleElementWithChildren.child.children[0].content
+  const firstChildColor =
+    EXAMPLES.completeExampleElementWithChildren.child.children[0].styles.color
+  // then
+  const element = vlueToHtml({ code: example })
+
+  //expect
+
+  expect(element.childNodes.length).toEqual(numberOfChilds)
+  expect(element.firstChild.innerText).toEqual(firstChildText)
+  expect(element.firstChild.style.color).toEqual(firstChildColor)
+})
